@@ -7,7 +7,12 @@ class Snapgpt < Formula
   sha256 "43e67e91322ceb4c0ddec2c4d8d6e0ceaea3e34b86c075920bbc91821c51d7df"
   license "MIT"
 
-  depends_on "python@3.11"
+  pour_bottle? do
+    reason "The bottle requires no compilation"
+    satisfy { true }
+  end
+
+  depends_on "python@3.12"
 
   resource "pathlib" do
     url "https://files.pythonhosted.org/packages/source/p/pathlib/pathlib-1.0.1.tar.gz"
@@ -20,7 +25,10 @@ class Snapgpt < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    virtualenv = virtualenv_create(libexec, "python3.12")
+    virtualenv.pip_install resources
+    virtualenv.pip_install buildpath
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
