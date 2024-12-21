@@ -16,7 +16,7 @@ class Snapgpt < Formula
 
   resource "termcolor" do
     url "https://files.pythonhosted.org/packages/source/t/termcolor/termcolor-2.5.0.tar.gz"
-    sha256 "3afb05607b89aed0ffe25202399ee0867ad4d3cb4180d98aaf8eefa6a5f7d475"
+    sha256 "998d8d27da6d48442e8e1f016119076b690d962507531df4890fcd2db2ef8a6f"
   end
 
   def install
