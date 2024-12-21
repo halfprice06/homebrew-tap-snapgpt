@@ -6,7 +6,7 @@ This is the official Homebrew tap for SnapGPT, a command-line utility that creat
 
 First, add the tap:
 ```bash
-brew tap halfprice06/tap-snapgpt
+brew tap halfprice06/homebrew-tap-snapgpt
 ```
 
 Then install SnapGPT:
